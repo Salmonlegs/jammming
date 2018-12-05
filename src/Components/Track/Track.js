@@ -3,15 +3,12 @@ import React from 'react';
 class Track extends React.Component {
     render() {
         return(
-            <div className="Track">
+            <div className="Track" >
                 <div className="Track-information">
-                    <h3>{this.props.searchResults.trackname}</h3>
-                    <p><{this.props.searchResults.artist} | this.props.searchResults.album</p>
+                    <h3>{this.props.track.name}</h3>
+                    <p>{this.props.track.artist} | {this.props.track.album}</p>
                 </div>
-                // not sure about the line below
-                <a className="Track-action">
-                    <p> if (isRemoval ? '-' : '+') </p>
-                </a>
+                <a className="Track-action">+ or - </a>
             </div>
         )
     }
@@ -19,3 +16,4 @@ class Track extends React.Component {
 
 
 export default Track;
+

@@ -5,14 +5,32 @@ import SearchBar from '../SearchBar/SearchBar.js';
 import Playlist from '../Playlist/Playlist';
 import SearchResults from '../SearchResults/SearchResults';
 
+
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       searchResults: [
-        {name: '', album: '', artist: ''},
-      ]
-    }
+        {
+        name: 'Under the Bridge', 
+        album: 'Californication', 
+        artist: 'Red Hot Chili Peppers',
+        id: 1,
+      },
+      {
+        name: 'Under the Bridge', 
+        album: 'Californication', 
+        artist: 'Red Hot Chili Peppers',
+        id: 1,
+      },
+      {
+        name: 'Under the Bridge', 
+        album: 'Californication', 
+        artist: 'Red Hot Chili Peppers',
+        id: 1,
+      },
+      ],
+    };
   }
 
 

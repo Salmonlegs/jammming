@@ -17,22 +17,34 @@ class App extends Component {
         artist: 'Red Hot Chili Peppers',
         id: 1,
       },
-      {
-        name: 'Under the Bridge', 
-        album: 'Californication', 
-        artist: 'Red Hot Chili Peppers',
-        id: 1,
-      },
-      {
-        name: 'Under the Bridge', 
-        album: 'Californication', 
-        artist: 'Red Hot Chili Peppers',
-        id: 1,
-      },
+      ],
+      playlistName: [
+        {
+          name: '',
+          album: '',
+          artist: '',
+          id: '',
+      }
+      ],
+      playlistTracks: [
+        {
+          name: '',
+          album: '',
+          artist: '',
+          id: '',
+        }
       ],
     };
+  
+  this.addTrack = this.addTrack.bind(this)
+  
   }
 
+  addTrack = (track) => {
+    if (this.state.playlistTracks.find(savedTrack => savedTrack.id !== track.id)) {
+      return this.state.playlistTracks.push(track)
+      }
+    }
 
   render() {
     return (
@@ -42,8 +54,8 @@ class App extends Component {
           <div className="App">
             <SearchBar />
             <div className="App-playlist">
-              <SearchResults searchResults={this.state.searchResults}/>
-              <Playlist />
+              <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
+              <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
             </div>
           </div>
         </div>
